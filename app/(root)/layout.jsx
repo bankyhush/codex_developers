@@ -1,11 +1,13 @@
+import FooterSection from "@/components/footer";
+import HeaderSection from "@/components/header";
+
 export default function FrontPageLayout({ children }) {
   return (
     <>
-      <span>Head</span>
-      <br />
+      <HeaderSection />
       {children}
-      <br />
-      <span>Foot</span>
+
+      <FooterSection />
     </>
   );
 }
