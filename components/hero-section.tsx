@@ -294,7 +294,7 @@ export default function HeroSection() {
                 <Button
                   asChild
                   size="lg"
-                  className="text-lg px-8 py-6 h-auto bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 shadow-lg shadow-blue-500/25"
+                  className="text-lg px-8 py-2 h-auto bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 shadow-lg shadow-blue-500/25"
                 >
                   <Link href="#">
                     <span>Start Your Project</span>
@@ -305,7 +305,7 @@ export default function HeroSection() {
                   asChild
                   variant="outline"
                   size="lg"
-                  className="text-lg px-8 py-6 h-auto"
+                  className="text-lg px-8 py-2 h-auto"
                 >
                   <Link href="#" className="flex items-center gap-2">
                     <span>View Portfolio</span>
