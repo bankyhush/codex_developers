@@ -14,8 +14,8 @@ const links = [
         href: "#",
       },
       {
-        title: "Customers",
-        href: "#",
+        title: "Templates",
+        href: "/portfolio",
       },
       {
         title: "Pricing",
@@ -23,7 +23,7 @@ const links = [
       },
       {
         title: "Help",
-        href: "#",
+        href: "/contact",
       },
       {
         title: "About",
