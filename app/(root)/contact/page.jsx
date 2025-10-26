@@ -13,6 +13,10 @@ import {
   ArrowRight,
   Sparkles,
   CheckCircle,
+  Github,
+  Twitter,
+  Linkedin,
+  Instagram,
 } from "lucide-react";
 import Link from "next/link";
 
