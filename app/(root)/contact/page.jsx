@@ -13,10 +13,6 @@ import {
   ArrowRight,
   Sparkles,
   CheckCircle,
-  Github,
-  Twitter,
-  Linkedin,
-  Instagram,
 } from "lucide-react";
 import Link from "next/link";
 
@@ -33,14 +29,14 @@ export default function ContactPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const handleChange = () => {
+  const handleChange = (e) => {
     setFormData((prev) => ({
       ...prev,
       [e.target.name]: e.target.value,
     }));
   };
 
-  const handleSubmit = async () => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
 
