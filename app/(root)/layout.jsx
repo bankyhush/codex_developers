@@ -6,7 +6,6 @@ export default function FrontPageLayout({ children }) {
     <>
       <HeaderSection />
       {children}
-
       <FooterSection />
     </>
   );
