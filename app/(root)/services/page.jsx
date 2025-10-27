@@ -315,7 +315,7 @@ export default function ServicesPage() {
                         ))}
                       {service.features.length > 3 && (
                         <li className="text-sm text-muted-foreground">
-                          +{service.features.length - 5} more features
+                          +{service.features.length - 3} more features
                         </li>
                       )}
                     </ul>
