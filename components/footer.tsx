@@ -98,16 +98,12 @@ const links = [
     group: "Legal",
     items: [
       {
-        title: "Licence",
-        href: "#",
-      },
-      {
         title: "Privacy",
-        href: "#",
+        href: "/privacy",
       },
       {
-        title: "Cookies",
-        href: "#",
+        title: "Terms",
+        href: "/terms",
       },
       {
         title: "Security",

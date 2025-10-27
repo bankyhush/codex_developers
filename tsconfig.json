@@ -32,7 +32,8 @@
     ".next\\dev/types/**/*.ts",
     ".next\\dev/types/**/*.ts",
     "app/(root)/contact/page.jsx",
-    "app/layout.jsx"
+    "app/layout.jsx",
+    "app/(root)/terms/page.jsx"
   ],
   "exclude": ["node_modules"]
 }
