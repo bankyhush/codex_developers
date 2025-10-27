@@ -21,10 +21,11 @@ import {
 } from "lucide-react";
 
 import { ModeToggle } from "./ui/mode";
+import Image from "next/image";
 
 const menuItems = [
   { name: "Pricing", href: "#", icon: null },
-  { name: "Free", href: "#", icon: null },
+  { name: "Courses", href: "/tech", icon: null },
 ];
 
 const products = [
@@ -62,8 +63,14 @@ export default function HeaderSection() {
               {/* Logo */}
               <Link href="/" className="flex items-center space-x-3 group">
                 <div className="relative">
-                  <Logo />
-                  <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg opacity-0 group-hover:opacity-20 transition-opacity duration-300 blur-sm" />
+                  <Image
+                    src="/codex/logo3.png"
+                    alt="Codex Developers"
+                    width={45}
+                    height={45}
+                    priority
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-blue-600 rounded-lg opacity-0 group-hover:opacity-20 transition-opacity duration-300 blur-sm" />
                 </div>
                 <div className="flex flex-col">
                   <span className="text-lg font-bold bg-gradient-to-r from-foreground to-foreground/80 bg-clip-text text-transparent">
@@ -85,7 +92,7 @@ export default function HeaderSection() {
                       className="text-sm font-medium text-foreground/70 hover:text-foreground transition-colors duration-200 relative group"
                     >
                       {item.name}
-                      <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-600 group-hover:w-full transition-all duration-300" />
+                      <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-blue-700 group-hover:w-full transition-all duration-300" />
                     </Link>
                   ))}
                 </div>
@@ -100,7 +107,7 @@ export default function HeaderSection() {
                   <Button
                     asChild
                     size="sm"
-                    className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700"
+                    className="bg-gradient-to-r from-blue-600 to-blue-600 hover:from-blue-700 hover:to-blue-800"
                   >
                     <Link href="#">
                       <span>Sign up</span>
@@ -164,7 +171,7 @@ export default function HeaderSection() {
                 </Button>
                 <Button
                   asChild
-                  className="flex-1 h-12 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700"
+                  className="flex-1 h-12 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-900"
                 >
                   <Link href="#" onClick={closeMenu}>
                     <span>Sign up</span>
@@ -209,7 +216,7 @@ export default function HeaderSection() {
                         onClick={closeMenu}
                       >
                         {IconComponent && (
-                          <div className="p-3 rounded-lg bg-gradient-to-br from-blue-500/10 to-purple-500/10 mb-3 group-hover:from-blue-500/20 group-hover:to-purple-500/20">
+                          <div className="p-3 rounded-lg bg-gradient-to-br from-blue-600/10 to-blue-500/10 mb-3 group-hover:from-blue-500/20 group-hover:to-blue-800/20">
                             <IconComponent className="h-6 w-6 text-blue-600" />
                           </div>
                         )}

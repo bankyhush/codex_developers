@@ -25,7 +25,7 @@ import StatsSection from "./stats";
 
 const menuItems = [
   { name: "Pricing", href: "#", icon: null },
-  { name: "Free", href: "#", icon: null },
+  { name: "Courses", href: "/tech", icon: null },
 ];
 
 const products = [
