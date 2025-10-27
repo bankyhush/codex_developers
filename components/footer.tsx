@@ -86,11 +86,22 @@ export default function FooterSection() {
           <div className="md:col-span-2">
             <Link href="/" aria-label="go home" className="block size-fit">
               <Image
+                src="/codex/dark.png"
+                alt="Codex Developers Logo"
+                width={120}
+                height={38}
+                priority
+                className="block dark:hidden"
+              />
+
+              {/* Dark Mode Logo */}
+              <Image
                 src="/codex/light.png"
                 alt="Codex Developers Logo"
                 width={120}
                 height={38}
                 priority
+                className="hidden dark:block"
               />
             </Link>
           </div>
