@@ -63,7 +63,14 @@ export default function HeroSection() {
               {/* Logo */}
               <Link href="/" className="flex items-center space-x-3 group">
                 <div className="relative">
-                  <Logo />
+                  {/* <Logo /> */}
+                  <Image
+                    src="/codex/logo2.png"
+                    alt="Codex Developers"
+                    width={45}
+                    height={45}
+                    priority
+                  />
                   <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg opacity-0 group-hover:opacity-20 transition-opacity duration-300 blur-sm" />
                 </div>
                 <div className="flex flex-col">
