@@ -24,7 +24,7 @@ export default function AboutPage() {
       icon: Code,
       title: "Web Development",
       description:
-        "Custom websites and web applications built with modern technologies like Next.js, React, and TypeScript.",
+        "Custom websites and web applications built with modern technologies like Next.js, Nuxt js, and TypeScript.",
       features: ["Responsive Design", "SEO Optimized", "Fast Performance"],
       gradient: "from-blue-500 to-cyan-500",
     },
@@ -86,10 +86,10 @@ export default function AboutPage() {
   ];
 
   const teamStats = [
-    { number: "500+", label: "Projects Completed" },
-    { number: "100+", label: "Happy Clients" },
-    { number: "50+", label: "Technologies" },
-    { number: "5+", label: "Years Experience" },
+    { number: "5000+", label: "Projects Completed" },
+    { number: "1000+", label: "Happy Clients" },
+    { number: "24+", label: "Technologies" },
+    { number: "10+", label: "Years Experience" },
   ];
 
   const technologies = [
@@ -112,6 +112,10 @@ export default function AboutPage() {
     "Photoshop",
     "Illustrator",
     "Microsoft",
+    "HTML5",
+    "CSS3",
+    "Boostrap",
+    "Vite",
   ];
 
   return (
@@ -129,7 +133,7 @@ export default function AboutPage() {
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 mb-6">
             <Sparkles className="h-4 w-4 text-blue-500" />
             <span className="text-sm font-medium text-blue-600 dark:text-blue-400">
-              Building Digital Excellence Since 2019
+              Building Digital Excellence Since 2015
             </span>
           </div>
           <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl bg-gradient-to-b from-foreground to-foreground/70 bg-clip-text text-transparent mb-6">
@@ -139,9 +143,9 @@ export default function AboutPage() {
             </span>
           </h1>
           <p className="mx-auto max-w-3xl text-xl text-muted-foreground">
-            We are Codex Developers - a passionate team of innovators,
-            designers, and developers dedicated to transforming ideas into
-            exceptional digital experiences that drive real business results.
+            We are Codex Developers, a passionate team of innovators, designers,
+            and developers dedicated to transforming ideas into exceptional
+            digital experiences that drive real business results.
           </p>
         </div>
 
@@ -237,18 +241,18 @@ export default function AboutPage() {
               <div className="space-y-4 text-muted-foreground">
                 <p className="text-lg leading-relaxed">
                   Founded in 2019, Codex Developers began as a small team of
-                  passionate developers with a shared vision: to create digital
+                  passionate developers with a shared vision to create digital
                   solutions that make a real impact.
                 </p>
                 <p className="leading-relaxed">
                   Today, we've grown into a full-service digital agency with
-                  expertise spanning web development, UI/UX design, and digital
-                  strategy. Our team brings together diverse talents and
+                  expertise spanning web & mobile development, UI/UX design, and
+                  digital strategy. Our team brings together diverse talents and
                   perspectives to deliver exceptional results for our clients.
                 </p>
                 <p className="leading-relaxed">
                   What sets us apart is our commitment to understanding your
-                  unique challenges and goals. We don't just write code - we
+                  unique challenges and goals. We don't just write code, we
                   build partnerships and create solutions that drive your
                   business forward.
                 </p>
