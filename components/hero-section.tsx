@@ -71,7 +71,7 @@ export default function HeroSection() {
                     height={45}
                     priority
                   />
-                  <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg opacity-0 group-hover:opacity-20 transition-opacity duration-300 blur-sm" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-blue-800 rounded-lg opacity-0 group-hover:opacity-20 transition-opacity duration-300 blur-sm" />
                 </div>
                 <div className="flex flex-col">
                   <span className="text-lg font-bold bg-gradient-to-r from-foreground to-foreground/80 bg-clip-text text-transparent">
@@ -93,7 +93,7 @@ export default function HeroSection() {
                       className="text-sm font-medium text-foreground/70 hover:text-foreground transition-colors duration-200 relative group"
                     >
                       {item.name}
-                      <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-600 group-hover:w-full transition-all duration-300" />
+                      <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-blue-800 group-hover:w-full transition-all duration-300" />
                     </Link>
                   ))}
                 </div>
@@ -108,7 +108,7 @@ export default function HeroSection() {
                   <Button
                     asChild
                     size="sm"
-                    className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700"
+                    className="bg-gradient-to-r from-blue-600 to-blue-800 hover:from-blue-700 hover:to-blue-900"
                   >
                     <Link href="#">
                       <span>Sign up</span>
@@ -172,7 +172,7 @@ export default function HeroSection() {
                 </Button>
                 <Button
                   asChild
-                  className="flex-1 h-12 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700"
+                  className="flex-1 h-12 bg-gradient-to-r from-blue-600 to-blue-800 hover:from-blue-700 hover:to-blue-900"
                 >
                   <Link href="#" onClick={closeMenu}>
                     <span>Sign up</span>
@@ -217,7 +217,7 @@ export default function HeroSection() {
                         onClick={closeMenu}
                       >
                         {IconComponent && (
-                          <div className="p-3 rounded-lg bg-gradient-to-br from-blue-500/10 to-purple-500/10 mb-3 group-hover:from-blue-500/20 group-hover:to-purple-500/20">
+                          <div className="p-3 rounded-lg bg-gradient-to-br from-blue-500/10 to-blue-700/10 mb-3 group-hover:from-blue-500/20 group-hover:to-blue-700/20">
                             <IconComponent className="h-6 w-6 text-blue-600" />
                           </div>
                         )}
@@ -265,8 +265,8 @@ export default function HeroSection() {
         {/* Enhanced Background Elements */}
         <div className="absolute inset-0 -z-10">
           <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl" />
-          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl" />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-r from-blue-500/5 to-purple-500/5 rounded-full blur-3xl" />
+          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-blue-700/10 rounded-full blur-3xl" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-r from-blue-500/5 to-blue-700/5 rounded-full blur-3xl" />
         </div>
 
         {/* Hero Section */}
@@ -284,7 +284,7 @@ export default function HeroSection() {
               {/* Main Heading */}
               <h1 className="text-4xl font-bold tracking-tight sm:text-6xl lg:text-7xl bg-gradient-to-b from-foreground to-foreground/70 bg-clip-text text-transparent mb-8">
                 Transform Your
-                <span className="block bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                <span className="block bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">
                   Digital Presence
                 </span>
               </h1>
@@ -301,7 +301,7 @@ export default function HeroSection() {
                 <Button
                   asChild
                   size="lg"
-                  className="text-lg px-8 py-2 h-auto bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 shadow-lg shadow-blue-500/25"
+                  className="text-lg px-8 py-2 h-auto bg-gradient-to-r from-blue-600 to-blue-800 hover:from-blue-700 hover:to-blue-900 shadow-lg shadow-blue-500/25"
                 >
                   <Link href="#">
                     <span>Start Your Project</span>
@@ -331,7 +331,7 @@ export default function HeroSection() {
           <div className="mt-20 lg:mt-32">
             <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
               <div className="relative rounded-2xl bg-gradient-to-br from-background to-muted/50 border border-border/50 p-2 shadow-2xl shadow-blue-500/10">
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-purple-500/5 rounded-2xl" />
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-blue-700/5 rounded-2xl" />
                 <div className="relative rounded-xl overflow-hidden border border-border/50">
                   <Image
                     className="w-full h-auto"
