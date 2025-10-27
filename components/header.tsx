@@ -24,7 +24,7 @@ import { ModeToggle } from "./ui/mode";
 import Image from "next/image";
 
 const menuItems = [
-  { name: "Pricing", href: "#", icon: null },
+  { name: "Services", href: "/services", icon: null },
   { name: "Courses", href: "/tech", icon: null },
 ];
 
@@ -100,8 +100,8 @@ export default function HeaderSection() {
                 <div className="flex items-center space-x-4 ml-8 pl-8 border-l border-border">
                   <ModeToggle />
                   <Button asChild variant="ghost" size="sm">
-                    <Link href="#">
-                      <span>Log in</span>
+                    <Link href="/contact">
+                      <span>Contact</span>
                     </Link>
                   </Button>
                   <Button
@@ -109,8 +109,8 @@ export default function HeaderSection() {
                     size="sm"
                     className="bg-gradient-to-r from-blue-600 to-blue-600 hover:from-blue-700 hover:to-blue-800"
                   >
-                    <Link href="#">
-                      <span>Sign up</span>
+                    <Link href="/login">
+                      <span>Get Started</span>
                       <ArrowRight className="ml-1 h-4 w-4" />
                     </Link>
                   </Button>
@@ -165,16 +165,16 @@ export default function HeaderSection() {
               {/* Auth Section */}
               <div className="flex gap-3">
                 <Button asChild variant="outline" className="flex-1 h-12">
-                  <Link href="#" onClick={closeMenu}>
-                    <span>Log in</span>
+                  <Link href="/contact" onClick={closeMenu}>
+                    <span>Contact</span>
                   </Link>
                 </Button>
                 <Button
                   asChild
                   className="flex-1 h-12 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-900"
                 >
-                  <Link href="#" onClick={closeMenu}>
-                    <span>Sign up</span>
+                  <Link href="/login" onClick={closeMenu}>
+                    <span>Get Started</span>
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
                 </Button>
