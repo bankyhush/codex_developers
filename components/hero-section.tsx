@@ -89,9 +89,9 @@ export default function HeroSection() {
 
               {/* Description */}
               <p className="mx-auto max-w-2xl text-xl text-muted-foreground leading-relaxed mb-12">
-                Codex Developers creates stunning, high-performance web apps
-                tailored to your business needs. From AI-powered builders to
-                custom solutions, we bring your vision to life.
+                Codex Developers creates stunning, high-performance web & mobile
+                apps tailored to your business needs. From AI-powered builders
+                to custom solutions, we bring your vision to life.
               </p>
 
               {/* CTA Buttons */}
@@ -101,7 +101,7 @@ export default function HeroSection() {
                   size="lg"
                   className="text-lg px-8 py-2 h-auto bg-gradient-to-r from-blue-600 to-blue-800 hover:from-blue-700 hover:to-blue-900 shadow-lg shadow-blue-500/25"
                 >
-                  <Link href="#">
+                  <Link href="/contact">
                     <span>Start Your Project</span>
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Link>
@@ -112,7 +112,7 @@ export default function HeroSection() {
                   size="lg"
                   className="text-lg px-8 py-2 h-auto"
                 >
-                  <Link href="#" className="flex items-center gap-2">
+                  <Link href="/portfolio" className="flex items-center gap-2">
                     <span>View Portfolio</span>
                   </Link>
                 </Button>
