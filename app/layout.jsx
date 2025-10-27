@@ -16,6 +16,9 @@ export const metadata = {
   title: "Codex Developers - Custom Web & App Development Services",
   description:
     "Codex Developers delivers custom web design, app development, e-commerce, SEO, &amp; software solutions tailored for growth-focused businesses. Contact us today",
+  icons: {
+    icon: "/codex.svg",
+  },
 };
 
 export default function RootLayout({ children }) {
