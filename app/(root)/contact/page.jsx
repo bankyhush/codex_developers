@@ -74,7 +74,7 @@ export default function ContactPage() {
       description: "Come say hello at our office",
       value: "123 Tech Street, Silicon Valley, CA",
       action: "https://maps.google.com",
-      color: "from-purple-500 to-pink-500",
+      color: "from-blue-500 to-pink-500",
     },
     {
       icon: Video,
@@ -127,7 +127,7 @@ export default function ContactPage() {
               </p>
             </div>
             <div className="bg-background/50 backdrop-blur-sm border border-border/50 rounded-2xl p-6">
-              <Clock className="h-8 w-8 text-purple-500 mx-auto mb-4" />
+              <Clock className="h-8 w-8 text-blue-500 mx-auto mb-4" />
               <h3 className="font-semibold mb-2">Response Time</h3>
               <p className="text-sm text-muted-foreground">
                 We'll respond within 24 hours
@@ -148,7 +148,7 @@ export default function ContactPage() {
             </Button>
             <Button
               asChild
-              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700"
+              className="bg-gradient-to-r from-blue-600 to-blue-600 hover:from-blue-700 hover:to-blue-700"
             >
               <Link href="/projects">View Our Work</Link>
             </Button>
@@ -163,7 +163,7 @@ export default function ContactPage() {
       {/* Background Elements */}
       <div className="absolute inset-0 -z-10 overflow-hidden">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl" />
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl" />
+        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-cyan-500/5 rounded-full blur-3xl" />
       </div>
 
@@ -177,7 +177,7 @@ export default function ContactPage() {
             </span>
           </div>
           <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl bg-gradient-to-b from-foreground to-foreground/70 bg-clip-text text-transparent mb-6">
-            <span className="block bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+            <span className="block bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent">
               Get in Touch With Us
             </span>
           </h1>
@@ -223,7 +223,7 @@ export default function ContactPage() {
             {/* Office Hours */}
             <div className="bg-background/50 backdrop-blur-sm border border-border/50 rounded-2xl p-6">
               <div className="flex items-center gap-3 mb-4">
-                <Clock className="h-6 w-6 text-purple-500" />
+                <Clock className="h-6 w-6 text-blue-500" />
                 <h3 className="text-lg font-semibold">Office Hours</h3>
               </div>
               <div className="space-y-3">
@@ -432,7 +432,7 @@ export default function ContactPage() {
               <Button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full h-12 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 shadow-lg shadow-blue-500/25 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300"
+                className="w-full h-12 bg-gradient-to-r from-blue-600 to-blue-600 hover:from-blue-700 hover:to-blue-700 shadow-lg shadow-blue-500/25 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300"
               >
                 {isSubmitting ? (
                   <div className="flex items-center gap-2">
@@ -458,7 +458,7 @@ export default function ContactPage() {
 
         {/* CTA Section */}
         <div className="mt-20 text-center">
-          <div className="bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-blue-500/20 rounded-2xl p-8 lg:p-12">
+          <div className="bg-gradient-to-r from-blue-500/10 to-blue-500/10 border border-blue-500/20 rounded-2xl p-8 lg:p-12">
             <h3 className="text-2xl font-bold mb-4">
               Ready to Start Immediately?
             </h3>
@@ -476,7 +476,7 @@ export default function ContactPage() {
               <Button
                 asChild
                 size="lg"
-                className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700"
+                className="bg-gradient-to-r from-blue-600 to-blue-600 hover:from-blue-700 hover:to-blue-700"
               >
                 <Link href="/projects" className="flex items-center gap-2">
                   <span>View Our Work</span>
