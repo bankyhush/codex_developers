@@ -160,7 +160,7 @@ export default function PortfolioPage() {
       {/* Background Blobs */}
       <div className="absolute inset-0 -z-10 overflow-hidden">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl" />
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl" />
+        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-cyan-500/5 rounded-full blur-3xl" />
       </div>
 
@@ -175,7 +175,7 @@ export default function PortfolioPage() {
           </div>
           <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl bg-gradient-to-b from-foreground to-foreground/70 bg-clip-text text-transparent mb-6">
             Our Portfolio
-            <span className="block bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+            <span className="block bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent">
               Of Innovation
             </span>
           </h1>
@@ -190,7 +190,7 @@ export default function PortfolioPage() {
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
           {stats.map((stat, index) => (
             <div key={index} className="text-center">
-              <div className="text-3xl lg:text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-2">
+              <div className="text-3xl lg:text-4xl font-bold bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent mb-2">
                 {stat.number}
               </div>
               <div className="text-sm lg:text-base text-muted-foreground font-medium">
@@ -227,7 +227,7 @@ export default function PortfolioPage() {
               >
                 {/* Image area */}
                 <div className="relative h-80 overflow-hidden">
-                  <div className="w-full h-full bg-gradient-to-br from-blue-500/10 to-purple-500/10 flex items-center justify-center">
+                  <div className="w-full h-full bg-gradient-to-br from-blue-500/10 to-blue-500/10 flex items-center justify-center">
                     <Globe className="h-16 w-16 text-blue-500" />
                   </div>
 
@@ -328,7 +328,7 @@ export default function PortfolioPage() {
                     <Button
                       asChild
                       size="sm"
-                      className="flex-1 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700"
+                      className="flex-1 bg-gradient-to-r from-blue-600 to-blue-600 hover:from-blue-700 hover:to-blue-700"
                     >
                       <Link
                         href={project.liveUrl}
@@ -358,7 +358,7 @@ export default function PortfolioPage() {
 
         {/* CTA Section */}
         <section className="text-center">
-          <div className="bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-blue-500/20 rounded-3xl p-8 lg:p-12">
+          <div className="bg-gradient-to-r from-blue-500/10 to-blue-500/10 border border-blue-500/20 rounded-3xl p-8 lg:p-12">
             <h3 className="text-2xl lg:text-3xl font-bold mb-4">
               Ready to Start Your Project?
             </h3>
@@ -371,7 +371,7 @@ export default function PortfolioPage() {
               <Button
                 asChild
                 size="lg"
-                className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700"
+                className="bg-gradient-to-r from-blue-600 to-blue-600 hover:from-blue-700 hover:to-blue-700"
               >
                 <Link href="/contact" className="flex items-center gap-2">
                   <span>Start Your Project</span>

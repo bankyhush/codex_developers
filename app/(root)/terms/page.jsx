@@ -1,6 +1,6 @@
 "use client";
 
-import { Shield, FileText } from "lucide-react";
+import { Shield } from "lucide-react";
 
 export default function TermsPage() {
   return (
@@ -15,7 +15,7 @@ export default function TermsPage() {
             </span>
           </div>
 
-          <h1 className="text-4xl font-bold tracking-tight sm:text-5xl bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-6">
+          <h1 className="text-4xl font-bold tracking-tight sm:text-5xl bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent mb-6">
             Terms & Conditions
           </h1>
 

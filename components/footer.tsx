@@ -8,19 +8,11 @@ const links = [
     items: [
       {
         title: "Features",
-        href: "#",
-      },
-      {
-        title: "Solution",
-        href: "#",
+        href: "/features",
       },
       {
         title: "Templates",
         href: "/portfolio",
-      },
-      {
-        title: "Pricing",
-        href: "#",
       },
       {
         title: "Help",
@@ -28,7 +20,7 @@ const links = [
       },
       {
         title: "About",
-        href: "#",
+        href: "/about",
       },
     ],
   },
@@ -36,32 +28,13 @@ const links = [
     group: "Solution",
     items: [
       {
-        title: "Startup",
-        href: "#",
-      },
-      {
         title: "Freelancers",
-        href: "#",
+        href: "/",
       },
-      {
-        title: "Organizations",
-        href: "#",
-      },
-      {
-        title: "Students",
-        href: "#",
-      },
-      {
-        title: "Collaboration",
-        href: "#",
-      },
+
       {
         title: "Design",
-        href: "#",
-      },
-      {
-        title: "Management",
-        href: "#",
+        href: "/services",
       },
     ],
   },
@@ -74,23 +47,15 @@ const links = [
       },
       {
         title: "Careers",
-        href: "#",
+        href: "/careers",
       },
       {
         title: "Blog",
-        href: "#",
-      },
-      {
-        title: "Press",
-        href: "#",
+        href: "/blog",
       },
       {
         title: "Contact",
         href: "/contact",
-      },
-      {
-        title: "Help",
-        href: "#",
       },
     ],
   },
@@ -107,7 +72,7 @@ const links = [
       },
       {
         title: "Security",
-        href: "#",
+        href: "/privacy",
       },
     ],
   },
