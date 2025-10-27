@@ -65,7 +65,7 @@ export default function HeroSection() {
                 <div className="relative">
                   {/* <Logo /> */}
                   <Image
-                    src="/codex/logo2.png"
+                    src="/codex/logo3.png"
                     alt="Codex Developers"
                     width={45}
                     height={45}
