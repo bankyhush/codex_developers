@@ -109,6 +109,8 @@ const technologies = [
   { name: "Firebase", icon: "🔥", category: "Backend" },
   { name: "AWS", icon: "☁️", category: "Cloud" },
   { name: "Docker", icon: "🐳", category: "DevOps" },
+  { name: "Photoshop", icon: "🖌️", category: "Design" },
+  { name: "Figma", icon: "🎨", category: "Design" },
 ];
 
 export default function ServicesShowcase() {
