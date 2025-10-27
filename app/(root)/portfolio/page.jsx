@@ -187,18 +187,6 @@ export default function PortfolioPage() {
         </div>
 
         {/* Stats */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
-          {stats.map((stat, index) => (
-            <div key={index} className="text-center">
-              <div className="text-3xl lg:text-4xl font-bold bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent mb-2">
-                {stat.number}
-              </div>
-              <div className="text-sm lg:text-base text-muted-foreground font-medium">
-                {stat.label}
-              </div>
-            </div>
-          ))}
-        </div>
 
         {/* Featured Projects */}
         <section className="mb-20 lg:mb-32">
