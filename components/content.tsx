@@ -243,7 +243,7 @@ export default function ServicesShowcase() {
               size="lg"
               className="bg-gradient-to-r from-blue-600 to-blue-800 hover:from-blue-700 hover:to-blue-900 shadow-lg shadow-blue-500/25"
             >
-              <Link href="#" className="flex items-center gap-2">
+              <Link href="/contact" className="flex items-center gap-2">
                 <span>Start Your Project Today</span>
                 <ArrowRight className="h-5 w-5" />
               </Link>
@@ -257,9 +257,9 @@ export default function ServicesShowcase() {
         {/* Stats Section */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16">
           {[
-            { value: "500+", label: "Projects Delivered" },
+            { value: "5000+", label: "Projects Delivered" },
             { value: "99%", label: "Client Satisfaction" },
-            { value: "50+", label: "Technologies" },
+            { value: "24+", label: "Technologies" },
             { value: "24/7", label: "Support" },
           ].map((stat, index) => (
             <div key={index} className="text-center">
