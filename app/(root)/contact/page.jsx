@@ -56,23 +56,23 @@ export default function ContactPage() {
       icon: Mail,
       title: "Email Us",
       description: "Send us an email anytime",
-      value: "hello@codexdevelopers.com",
-      action: "mailto:hello@codexdevelopers.com",
+      value: "info@codexdevelopers.com",
+      action: "mailto:info@codexdevelopers.com",
       color: "from-blue-500 to-cyan-500",
     },
     {
       icon: Phone,
       title: "Call Us",
-      description: "Mon to Fri from 9am to 6pm",
-      value: "+1 (555) 123-4567",
-      action: "tel:+15551234567",
+      description: "Mon to Fri from 8am to 6pm",
+      value: "+234 9071853515",
+      action: "tel:+2349071853515",
       color: "from-green-500 to-emerald-500",
     },
     {
       icon: MapPin,
       title: "Visit Us",
       description: "Come say hello at our office",
-      value: "123 Tech Street, Silicon Valley, CA",
+      value: "Lagos, Nigeria",
       action: "https://maps.google.com",
       color: "from-blue-500 to-pink-500",
     },
@@ -87,9 +87,9 @@ export default function ContactPage() {
   ];
 
   const budgetOptions = [
-    "Less than $5,000",
-    "$5,000 - $15,000",
-    "$15,000 - $30,000",
+    "Less than $450",
+    "$500 - $1,000",
+    "$5,000 - $10,000",
     "$30,000 - $50,000",
     "$50,000+",
   ];
@@ -228,7 +228,7 @@ export default function ContactPage() {
               </div>
               <div className="space-y-3">
                 {[
-                  { day: "Monday - Friday", time: "9:00 AM - 6:00 PM" },
+                  { day: "Monday - Friday", time: "8:00 AM - 6:00 PM" },
                   { day: "Saturday", time: "10:00 AM - 4:00 PM" },
                   { day: "Sunday", time: "Closed" },
                 ].map((schedule, index) => (
@@ -275,9 +275,9 @@ export default function ContactPage() {
             <div className="grid grid-cols-2 gap-4">
               {[
                 { value: "24h", label: "Avg. Response" },
-                { value: "500+", label: "Projects" },
+                { value: "5000+", label: "Projects" },
                 { value: "99%", label: "Satisfaction" },
-                { value: "50+", label: "Technologies" },
+                { value: "24+", label: "Technologies" },
               ].map((stat, index) => (
                 <div
                   key={index}
@@ -468,7 +468,10 @@ export default function ContactPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild variant="outline" size="lg">
-                <Link href="#" className="flex items-center gap-2">
+                <Link
+                  href="tel:+2349071853515"
+                  className="flex items-center gap-2"
+                >
                   <Calendar className="h-5 w-5" />
                   <span>Schedule Call</span>
                 </Link>

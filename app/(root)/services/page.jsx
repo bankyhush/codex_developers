@@ -36,10 +36,10 @@ const services = [
       "Performance Optimization",
       "SEO-Friendly Structure",
     ],
-    technologies: ["Next.js", "React", "Node.js", "TypeScript", "MongoDB"],
+    technologies: ["Next.js", "React", "Node.js", "PHP", "MongoDB"],
     gradient: "from-blue-500 to-cyan-500",
     price: "Starting at ₦150,000",
-    delivery: "2-4 weeks",
+    delivery: "24-48 hrs",
   },
   {
     icon: Smartphone,
@@ -56,7 +56,7 @@ const services = [
     ],
     technologies: ["React Native", "Flutter", "iOS Swift", "Android Kotlin"],
     gradient: "from-blue-500 to-pink-500",
-    price: "Starting at ₦300,000",
+    price: "Starting at ₦700,000",
     delivery: "4-8 weeks",
   },
   {
@@ -132,7 +132,7 @@ const services = [
       "Presentation Design",
       "Marketing Materials",
     ],
-    technologies: ["Figma", "Adobe Creative Suite", "Canva", "Sketch"],
+    technologies: ["Figma", "Adobe Creative Suite", "Photoshop", "Sketch"],
     gradient: "from-yellow-500 to-amber-500",
     price: "Starting at ₦50,000",
     delivery: "1-2 weeks",
@@ -140,9 +140,9 @@ const services = [
 ];
 
 const serviceStats = [
-  { number: "500+", label: "Projects Completed" },
-  { number: "100+", label: "Happy Clients" },
-  { number: "98%", label: "Client Satisfaction" },
+  { number: "5000+", label: "Projects Completed" },
+  { number: "1000+", label: "Happy Clients" },
+  { number: "99%", label: "Client Satisfaction" },
   { number: "24/7", label: "Support" },
 ];
 
@@ -315,7 +315,7 @@ export default function ServicesPage() {
                         ))}
                       {service.features.length > 3 && (
                         <li className="text-sm text-muted-foreground">
-                          +{service.features.length - 3} more features
+                          +{service.features.length - 5} more features
                         </li>
                       )}
                     </ul>
