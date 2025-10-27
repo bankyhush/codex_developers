@@ -197,20 +197,7 @@ export default function CoursesPage() {
   const featuredCourses = courses.filter((course) => course.featured);
 
   return (
-    <div
-      className="min-h-screen bg-gradient-to-br from-background via-background to-muted/30 pt-32 pb-20"
-      style={{
-        backgroundImage: `
-        radial-gradient(circle at 50% 50%, 
-          rgba(203, 213, 225, 0.12) 0%, 
-          rgba(203, 213, 225, 0.07) 25%, 
-          rgba(203, 213, 225, 0.03) 35%, 
-          transparent 50%
-        )
-      `,
-        backgroundSize: "100% 100%",
-      }}
-    >
+    <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted/30 pt-32 pb-20">
       {/* Background Elements */}
       <div className="absolute inset-0 -z-10 overflow-hidden">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl" />

@@ -270,7 +270,7 @@ export default function HeroSection() {
         </div>
 
         {/* Hero Section */}
-        <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-32">
+        <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-32 dark:[background:repeating-linear-gradient(45deg,#000_0px,#111_2px,#000_4px,#222_6px)]">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="text-center">
               {/* Badge */}

@@ -7,6 +7,16 @@
   .image-pixelated {
     image-rendering: pixelated;
   }
+
+  .dark-bg-pattern {
+    background: repeating-linear-gradient(
+      45deg,
+      #000 0px,
+      #111 2px,
+      #000 4px,
+      #222 6px
+    );
+  }
 }
 
 @theme inline {
