@@ -87,8 +87,8 @@ const features = [
 ];
 
 const technologies = [
-  { name: "HTML", icon: "🔗", category: "Frontend" },
-  { name: "CSS", icon: "🎨", category: "Frontend" },
+  { name: "HTML5", icon: "🔗", category: "Frontend" },
+  { name: "CSS3", icon: "🎨", category: "Frontend" },
   { name: "JavaScript", icon: "⚡", category: "Frontend" },
   { name: "Next.js", icon: "▲", category: "Framework" },
   { name: "Vite", icon: "⚡", category: "Build Tool" },
