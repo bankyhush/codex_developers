@@ -1,4 +1,5 @@
 import { Logo } from "@/components/logo";
+import Image from "next/image";
 import Link from "next/link";
 
 const links = [
@@ -123,7 +124,13 @@ export default function FooterSection() {
         <div className="grid gap-12 md:grid-cols-5">
           <div className="md:col-span-2">
             <Link href="/" aria-label="go home" className="block size-fit">
-              <Logo />
+              <Image
+                src="/codex/light.png"
+                alt="Codex Developers Logo"
+                width={120}
+                height={38}
+                priority
+              />
             </Link>
           </div>
 

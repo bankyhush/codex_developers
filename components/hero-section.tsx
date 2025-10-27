@@ -291,7 +291,7 @@ export default function HeroSection() {
 
               {/* Description */}
               <p className="mx-auto max-w-2xl text-xl text-muted-foreground leading-relaxed mb-12">
-                Codex Developers creates stunning, high-performance websites
+                Codex Developers creates stunning, high-performance web apps
                 tailored to your business needs. From AI-powered builders to
                 custom solutions, we bring your vision to life.
               </p>

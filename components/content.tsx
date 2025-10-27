@@ -29,7 +29,7 @@ const features = [
     action: "Start Building",
     actionIcon: Search,
     image: "/images/ai-development.jpg",
-    gradient: "from-blue-500 to-purple-600",
+    gradient: "from-blue-500 to-blue-800",
   },
   {
     icon: Layout,
@@ -60,7 +60,7 @@ const features = [
     action: "Boost Conversions",
     actionIcon: Search,
     image: "/images/conversion-optimization.jpg",
-    gradient: "from-purple-500 to-indigo-600",
+    gradient: "from-blue-800 to-indigo-600",
   },
   {
     icon: Code,
@@ -119,7 +119,7 @@ export default function ServicesShowcase() {
       {/* Background Elements */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-0 left-0 w-72 h-72 bg-blue-500/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-800/5 rounded-full blur-3xl" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-cyan-500/5 rounded-full blur-3xl" />
       </div>
 
@@ -163,7 +163,7 @@ export default function ServicesShowcase() {
                   <h3 className="text-2xl font-bold text-foreground mb-2">
                     {feature.title}
                     {feature.highlight && (
-                      <span className="block bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                      <span className="block bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">
                         {feature.highlight}
                       </span>
                     )}
@@ -185,7 +185,7 @@ export default function ServicesShowcase() {
                   <Button
                     asChild
                     variant="outline"
-                    className="w-full justify-between group/btn hover:bg-gradient-to-r hover:from-blue-600 hover:to-purple-600 hover:text-white transition-all duration-300"
+                    className="w-full justify-between group/btn hover:bg-gradient-to-r hover:from-blue-600 hover:to-blue-800 hover:text-white transition-all duration-300"
                   >
                     <Link href="#">
                       <span>{feature.action}</span>
@@ -231,7 +231,7 @@ export default function ServicesShowcase() {
                 </div>
 
                 {/* Hover gradient */}
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-purple-500/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-blue-800/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
             ))}
           </div>
@@ -241,7 +241,7 @@ export default function ServicesShowcase() {
             <Button
               asChild
               size="lg"
-              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 shadow-lg shadow-blue-500/25"
+              className="bg-gradient-to-r from-blue-600 to-blue-800 hover:from-blue-700 hover:to-blue-900 shadow-lg shadow-blue-500/25"
             >
               <Link href="#" className="flex items-center gap-2">
                 <span>Start Your Project Today</span>
@@ -263,7 +263,7 @@ export default function ServicesShowcase() {
             { value: "24/7", label: "Support" },
           ].map((stat, index) => (
             <div key={index} className="text-center">
-              <div className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              <div className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">
                 {stat.value}
               </div>
               <div className="text-sm text-muted-foreground font-medium">
