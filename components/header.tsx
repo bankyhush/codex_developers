@@ -42,10 +42,8 @@ const products = [
 ];
 
 const resources = [
-  { name: "Use Templates", href: "#", icon: null },
-  { name: "For Enterprise", href: "#", icon: null },
-  { name: "Learn", href: "#", icon: null },
-  { name: "Blog", href: "#", icon: null },
+  { name: "Use Templates", href: "/portfolio", icon: null },
+  { name: "For Enterprise", href: "/features", icon: null },
 ];
 
 export default function HeaderSection() {
