@@ -115,7 +115,7 @@ export default function DomainCheckerPage() {
             </span>
           </div>
           <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl bg-gradient-to-b from-foreground to-foreground/70 bg-clip-text text-transparent mb-6">
-            Domain Name
+            Your Domain
             <span className="block bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent">
               Availability Checker
             </span>
