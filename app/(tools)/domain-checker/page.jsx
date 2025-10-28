@@ -7,13 +7,12 @@ import {
   CheckCircle,
   XCircle,
   Calendar,
-  Clock,
   Building,
   Sparkles,
   RefreshCw,
   AlertCircle,
   ExternalLink,
-  Shield,
+  DollarSign,
 } from "lucide-react";
 
 export default function DomainCheckerPage() {
@@ -22,21 +21,19 @@ export default function DomainCheckerPage() {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
 
-  const popularDomains = [".com", ".net", ".org", ".io", ".dev", ".co", ".ai"];
+  const popularExtensions = [
+    ".com",
+    ".net",
+    ".org",
+    ".io",
+    ".dev",
+    ".co",
+    ".ai",
+  ];
 
-  // More reliable domain checking with multiple fallbacks
   const checkDomain = async (domainToCheck = domain) => {
     if (!domainToCheck.trim()) {
       setError("Please enter a domain name");
-      return;
-    }
-
-    // Ensure domain has an extension
-    const hasExtension = /\.(com|net|org|io|dev|co|ai|info|biz|us)$/i.test(
-      domainToCheck
-    );
-    if (!hasExtension) {
-      setError("Please include a domain extension (e.g., .com, .net)");
       return;
     }
 
@@ -45,179 +42,33 @@ export default function DomainCheckerPage() {
     setResults(null);
 
     try {
-      // Method 1: Try WHOIS API first
-      let domainData = await tryWhoisAPI(domainToCheck);
+      const response = await fetch(
+        `/api/domain-checker?domain=${encodeURIComponent(domainToCheck)}`
+      );
 
-      // Method 2: If WHOIS fails, try DNS lookup method
-      if (!domainData || domainData.available === undefined) {
-        domainData = await tryDNSLookup(domainToCheck);
+      if (!response.ok) {
+        throw new Error(`API returned ${response.status}`);
       }
 
-      // Method 3: If both methods fail, use a reliable simulation
-      if (!domainData) {
-        domainData = await simulateDomainCheck(domainToCheck);
-      }
+      const data = await response.json();
 
-      setResults(domainData);
+      // Process the response - now much simpler!
+      const processedResults = {
+        domain: data.domain,
+        available: data.available,
+        price: data.price,
+        currency: data.currency,
+        source: data.source,
+        timestamp: data.timestamp,
+      };
+
+      setResults(processedResults);
     } catch (err) {
       console.error("Domain check error:", err);
       setError("Failed to check domain availability. Please try again.");
     } finally {
       setIsLoading(false);
     }
-  };
-
-  // Method 1: WHOIS API
-  const tryWhoisAPI = async (domain) => {
-    try {
-      const response = await fetch(
-        `https://api.whois.vu/?q=${encodeURIComponent(domain)}&domain=1`
-      );
-      if (!response.ok) throw new Error("WHOIS API failed");
-
-      const data = await response.json();
-      return {
-        domain: domain,
-        available: data.available || false,
-        created: data.created || null,
-        expires: data.expires || null,
-        registrar: data.registrar || "Unknown",
-        status: data.status || "unknown",
-        nameservers: data.nameservers || [],
-        source: "WHOIS API",
-      };
-    } catch {
-      return null;
-    }
-  };
-
-  // Method 2: DNS Lookup Simulation (More reliable for availability)
-  const tryDNSLookup = async (domain) => {
-    return new Promise((resolve) => {
-      // Simulate DNS lookup by checking if domain resolves
-      // This is a simulation since we can't do actual DNS lookups from browser
-      const img = new Image();
-      img.onload = () => {
-        // If image loads, domain likely exists
-        resolve({
-          domain: domain,
-          available: false,
-          created: getRandomPastDate(),
-          expires: getRandomFutureDate(),
-          registrar: getRandomRegistrar(),
-          status: "active",
-          nameservers: [`ns1.${domain}`, `ns2.${domain}`],
-          source: "DNS Simulation",
-        });
-      };
-      img.onerror = () => {
-        // If image fails to load, domain might be available
-        resolve({
-          domain: domain,
-          available: true,
-          created: null,
-          expires: null,
-          registrar: null,
-          status: "available",
-          nameservers: [],
-          source: "DNS Simulation",
-        });
-      };
-
-      // Try to load a favicon or common image path
-      img.src = `https://${domain}/favicon.ico?${Date.now()}`;
-
-      // Timeout after 3 seconds
-      setTimeout(() => {
-        resolve(simulateDomainCheck(domain));
-      }, 3000);
-    });
-  };
-
-  // Method 3: Smart Simulation based on domain patterns
-  const simulateDomainCheck = (domain) => {
-    // Common taken domains for more accurate simulation
-    const commonTakenDomains = [
-      "google.com",
-      "facebook.com",
-      "youtube.com",
-      "amazon.com",
-      "twitter.com",
-      "instagram.com",
-      "linkedin.com",
-      "apple.com",
-      "microsoft.com",
-      "netflix.com",
-      "github.com",
-      "stackoverflow.com",
-      "reddit.com",
-      "whatsapp.com",
-      "tiktok.com",
-    ];
-
-    const isCommonDomain = commonTakenDomains.includes(domain.toLowerCase());
-    const isLikelyTaken =
-      domain.length < 8 || isCommonDomain || Math.random() > 0.3;
-
-    if (isLikelyTaken) {
-      return {
-        domain: domain,
-        available: false,
-        created: getRandomPastDate(),
-        expires: getRandomFutureDate(),
-        registrar: getRandomRegistrar(),
-        status: "active",
-        nameservers: [
-          `ns1.${domain.split(".")[0]}.com`,
-          `ns2.${domain.split(".")[0]}.com`,
-        ],
-        source: "Smart Simulation",
-      };
-    } else {
-      return {
-        domain: domain,
-        available: true,
-        created: null,
-        expires: null,
-        registrar: null,
-        status: "available",
-        nameservers: [],
-        source: "Smart Simulation",
-      };
-    }
-  };
-
-  // Helper functions
-  const getRandomPastDate = () => {
-    const start = new Date(1995, 0, 1);
-    const end = new Date();
-    return new Date(
-      start.getTime() + Math.random() * (end.getTime() - start.getTime())
-    ).toISOString();
-  };
-
-  const getRandomFutureDate = () => {
-    const start = new Date();
-    const end = new Date(2030, 0, 1);
-    return new Date(
-      start.getTime() + Math.random() * (end.getTime() - start.getTime())
-    ).toISOString();
-  };
-
-  const getRandomRegistrar = () => {
-    const registrars = [
-      "GoDaddy",
-      "Namecheap",
-      "Google Domains",
-      "Cloudflare",
-      "Name.com",
-      "Bluehost",
-      "HostGator",
-      "DreamHost",
-      "IONOS",
-      "Enom",
-    ];
-    return registrars[Math.floor(Math.random() * registrars.length)];
   };
 
   const formatDate = (dateString) => {
@@ -233,23 +84,10 @@ export default function DomainCheckerPage() {
     }
   };
 
-  const getDomainAge = (createdDate) => {
-    if (!createdDate) return "N/A";
-    try {
-      const created = new Date(createdDate);
-      const now = new Date();
-      const years = now.getFullYear() - created.getFullYear();
-      return `${years} year${years !== 1 ? "s" : ""}`;
-    } catch {
-      return "Unknown";
-    }
-  };
-
   const quickCheck = (extension) => {
     const baseDomain = domain.split(".")[0] || "example";
     const domainToCheck = `${baseDomain}${extension}`;
 
-    // Auto-add extension if user didn't type one
     if (!domain.includes(".")) {
       setDomain(domainToCheck);
     }
@@ -272,7 +110,7 @@ export default function DomainCheckerPage() {
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 mb-6">
             <Sparkles className="h-4 w-4 text-blue-500" />
             <span className="text-sm font-medium text-blue-600 dark:text-blue-400">
-              Accurate Domain Search
+              Real-Time Domain Search
             </span>
           </div>
           <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl bg-gradient-to-b from-foreground to-foreground/70 bg-clip-text text-transparent mb-6">
@@ -282,8 +120,8 @@ export default function DomainCheckerPage() {
             </span>
           </h1>
           <p className="mx-auto max-w-2xl text-xl text-muted-foreground">
-            Check domain availability with improved accuracy. Get reliable
-            results for your perfect domain name.
+            Check domain availability with real-time data from DomainsDuck API.
+            Get accurate, instant results.
           </p>
         </div>
 
@@ -336,7 +174,7 @@ export default function DomainCheckerPage() {
                 Quick check with popular extensions:
               </p>
               <div className="flex flex-wrap justify-center gap-2">
-                {popularDomains.map((ext) => (
+                {popularExtensions.map((ext) => (
                   <Button
                     key={ext}
                     variant="outline"
@@ -359,7 +197,7 @@ export default function DomainCheckerPage() {
             <div className="text-center mb-8">
               <h2 className="text-2xl font-bold mb-2">Domain Results</h2>
               <p className="text-muted-foreground">
-                Detailed information for {results.domain}
+                Results for {results.domain}
                 <span className="text-xs bg-muted/50 px-2 py-1 rounded ml-2">
                   Source: {results.source}
                 </span>
@@ -384,6 +222,14 @@ export default function DomainCheckerPage() {
                         <p className="text-muted-foreground">
                           This domain is available for registration
                         </p>
+                        {results.price && (
+                          <div className="flex items-center gap-2 mt-2 text-green-600">
+                            <DollarSign className="h-4 w-4" />
+                            <span className="font-semibold">
+                              ${results.price} {results.currency}/year
+                            </span>
+                          </div>
+                        )}
                       </div>
                     </>
                   ) : (
@@ -406,117 +252,11 @@ export default function DomainCheckerPage() {
                 ) : (
                   <Button variant="outline">
                     <ExternalLink className="h-4 w-4 mr-2" />
-                    View Details
+                    Search Alternatives
                   </Button>
                 )}
               </div>
             </div>
-
-            {/* Domain Details - Only show if domain is taken */}
-            {!results.available && (
-              <div className="grid md:grid-cols-2 gap-6">
-                {/* Registration Dates */}
-                <div className="space-y-6">
-                  <h4 className="text-lg font-semibold flex items-center gap-2">
-                    <Calendar className="h-5 w-5 text-blue-500" />
-                    Registration Details
-                  </h4>
-
-                  <div className="space-y-4">
-                    <div className="flex justify-between items-center p-3 bg-muted/30 rounded-lg">
-                      <span className="text-sm text-muted-foreground">
-                        Year Registered
-                      </span>
-                      <span className="font-medium">
-                        {results.created
-                          ? new Date(results.created).getFullYear()
-                          : "N/A"}
-                      </span>
-                    </div>
-
-                    <div className="flex justify-between items-center p-3 bg-muted/30 rounded-lg">
-                      <span className="text-sm text-muted-foreground">
-                        Registration Date
-                      </span>
-                      <span className="font-medium">
-                        {formatDate(results.created)}
-                      </span>
-                    </div>
-
-                    <div className="flex justify-between items-center p-3 bg-muted/30 rounded-lg">
-                      <span className="text-sm text-muted-foreground">
-                        Expiry Date
-                      </span>
-                      <span className="font-medium">
-                        {formatDate(results.expires)}
-                      </span>
-                    </div>
-
-                    <div className="flex justify-between items-center p-3 bg-muted/30 rounded-lg">
-                      <span className="text-sm text-muted-foreground">
-                        Domain Age
-                      </span>
-                      <span className="font-medium">
-                        {getDomainAge(results.created)}
-                      </span>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Registrar Information */}
-                <div className="space-y-6">
-                  <h4 className="text-lg font-semibold flex items-center gap-2">
-                    <Building className="h-5 w-5 text-purple-500" />
-                    Registrar Information
-                  </h4>
-
-                  <div className="space-y-4">
-                    <div className="flex justify-between items-center p-3 bg-muted/30 rounded-lg">
-                      <span className="text-sm text-muted-foreground">
-                        Registrar
-                      </span>
-                      <span className="font-medium">
-                        {results.registrar || "N/A"}
-                      </span>
-                    </div>
-
-                    <div className="flex justify-between items-center p-3 bg-muted/30 rounded-lg">
-                      <span className="text-sm text-muted-foreground">
-                        Status
-                      </span>
-                      <span
-                        className={`font-medium px-2 py-1 rounded text-xs ${
-                          results.status === "active"
-                            ? "bg-green-500/20 text-green-600"
-                            : "bg-yellow-500/20 text-yellow-600"
-                        }`}
-                      >
-                        {results.status || "Unknown"}
-                      </span>
-                    </div>
-
-                    {/* Nameservers */}
-                    {results.nameservers && results.nameservers.length > 0 && (
-                      <div className="p-3 bg-muted/30 rounded-lg">
-                        <span className="text-sm text-muted-foreground block mb-2">
-                          Nameservers
-                        </span>
-                        <div className="space-y-1">
-                          {results.nameservers.map((ns, index) => (
-                            <div
-                              key={index}
-                              className="text-sm font-mono bg-background/50 px-2 py-1 rounded"
-                            >
-                              {ns}
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-                    )}
-                  </div>
-                </div>
-              </div>
-            )}
 
             {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row gap-3 mt-8 pt-6 border-t border-border/50">
@@ -544,21 +284,44 @@ export default function DomainCheckerPage() {
           </div>
         )}
 
-        {/* Accuracy Notice */}
-        <div className="mt-8 bg-yellow-500/10 border border-yellow-500/20 rounded-2xl p-6">
-          <div className="flex items-start gap-3">
-            <Shield className="h-5 w-5 text-yellow-500 mt-0.5" />
-            <div>
-              <h3 className="font-semibold text-yellow-600 mb-2">
-                Accuracy Notice
-              </h3>
-              <p className="text-yellow-600/80 text-sm">
-                This tool provides domain availability estimates. For 100%
-                accurate results, please check with official domain registrars.
-                Some results are simulated for demonstration purposes.
-              </p>
-            </div>
-          </div>
+        {/* Features Section */}
+        <div className="mt-20 grid md:grid-cols-3 gap-8">
+          {[
+            {
+              icon: Search,
+              title: "Real-Time Data",
+              description:
+                "Get accurate domain availability from DomainsDuck API",
+            },
+            {
+              icon: DollarSign,
+              title: "Pricing Info",
+              description: "See registration prices for available domains",
+            },
+            {
+              icon: Globe,
+              title: "Instant Results",
+              description: "Check any domain extension with quick results",
+            },
+          ].map((feature, index) => {
+            const IconComponent = feature.icon;
+            return (
+              <div
+                key={index}
+                className="text-center bg-background/50 backdrop-blur-sm border border-border/50 rounded-2xl p-6"
+              >
+                <div className="p-3 rounded-xl bg-blue-500/10 w-fit mx-auto mb-4">
+                  <IconComponent className="h-6 w-6 text-blue-500" />
+                </div>
+                <h3 className="font-semibold text-foreground mb-2">
+                  {feature.title}
+                </h3>
+                <p className="text-muted-foreground text-sm">
+                  {feature.description}
+                </p>
+              </div>
+            );
+          })}
         </div>
       </div>
     </div>
