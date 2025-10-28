@@ -32,7 +32,7 @@ const products = [
   { name: "AI Web Builder", href: "#", icon: Layout },
   { name: "AI Blog Builder", href: "#", icon: BookOpen },
   { name: "Online Shop", href: "#", icon: ShoppingCart },
-  { name: "Your QR Code", href: "#", icon: QrCode },
+  { name: "Your QR Code", href: "/qr-code", icon: QrCode },
   { name: "Domain Names", href: "#", icon: Sparkles },
   { name: "Logo Generator", href: "#", icon: Palette },
   { name: "Business Names", href: "#", icon: Building },

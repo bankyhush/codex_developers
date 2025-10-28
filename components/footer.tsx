@@ -28,8 +28,8 @@ const links = [
     group: "Solution",
     items: [
       {
-        title: "Freelancers",
-        href: "/",
+        title: "Your QR Code",
+        href: "/qr-code",
       },
 
       {
