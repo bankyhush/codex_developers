@@ -208,7 +208,7 @@ export default function QRGeneratorPage() {
   const presetColors = [
     { dark: "#000000", light: "#FFFFFF", name: "Classic" },
     { dark: "#2563EB", light: "#F3F4F6", name: "Blue" },
-    { dark: "#7C3AED", light: "#F5F3FF", name: "Purple" },
+    { dark: "#7C3AED", light: "#F5F3FF", name: "blue" },
     { dark: "#DC2626", light: "#FEF2F2", name: "Red" },
     { dark: "#059669", light: "#F0FDF4", name: "Green" },
   ];
@@ -218,7 +218,7 @@ export default function QRGeneratorPage() {
       {/* Background Elements */}
       <div className="absolute inset-0 -z-10 overflow-hidden">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl" />
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl" />
+        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-green-500/5 rounded-full blur-3xl" />
       </div>
 
@@ -233,7 +233,7 @@ export default function QRGeneratorPage() {
           </div>
           <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl bg-gradient-to-b from-foreground to-foreground/70 bg-clip-text text-transparent mb-6">
             QR Code Generator
-            <span className="block bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+            <span className="block bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent">
               Create in Seconds
             </span>
           </h1>
@@ -266,7 +266,7 @@ export default function QRGeneratorPage() {
                       onClick={() => setQrType(type.id)}
                       className={`flex flex-col items-center gap-2 p-3 rounded-xl border transition-all duration-300 ${
                         qrType === type.id
-                          ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white border-transparent shadow-lg shadow-blue-500/25"
+                          ? "bg-gradient-to-r from-blue-600 to-blue-600 text-white border-transparent shadow-lg shadow-blue-500/25"
                           : "bg-background/50 border-border/50 text-foreground/70 hover:border-blue-500/50"
                       }`}
                     >
@@ -362,7 +362,7 @@ export default function QRGeneratorPage() {
               <Button
                 onClick={generateQRCode}
                 disabled={!qrData.trim() || isGenerating}
-                className="flex-1 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 disabled:opacity-50"
+                className="flex-1 bg-gradient-to-r from-blue-600 to-blue-600 hover:from-blue-700 hover:to-blue-700 disabled:opacity-50"
               >
                 {isGenerating ? (
                   <div className="flex items-center gap-2">
