@@ -33,6 +33,11 @@ const links = [
       },
 
       {
+        title: "Domain Names",
+        href: "/domain-checker",
+      },
+
+      {
         title: "Design",
         href: "/services",
       },
