@@ -33,13 +33,17 @@ const links = [
       },
 
       {
-        title: "Domain Names",
+        title: "Domain Checker",
         href: "/domain-checker",
       },
 
       {
-        title: "Design",
+        title: "Codex Services",
         href: "/services",
+      },
+      {
+        title: "Names Generator",
+        href: "/name-gen",
       },
     ],
   },
