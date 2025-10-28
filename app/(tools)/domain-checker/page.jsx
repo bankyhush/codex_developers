@@ -101,7 +101,7 @@ export default function DomainCheckerPage() {
       {/* Background Elements */}
       <div className="absolute inset-0 -z-10 overflow-hidden">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl" />
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl" />
+        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-green-500/5 rounded-full blur-3xl" />
       </div>
 
@@ -116,7 +116,7 @@ export default function DomainCheckerPage() {
           </div>
           <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl bg-gradient-to-b from-foreground to-foreground/70 bg-clip-text text-transparent mb-6">
             Domain Name
-            <span className="block bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+            <span className="block bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent">
               Availability Checker
             </span>
           </h1>
@@ -154,7 +154,7 @@ export default function DomainCheckerPage() {
               <Button
                 onClick={() => checkDomain()}
                 disabled={isLoading}
-                className="sm:w-auto bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 px-6 sm:px-8 py-3 sm:py-4 h-auto text-base sm:text-lg"
+                className="sm:w-auto bg-gradient-to-r from-blue-600 to-blue-600 hover:from-blue-700 hover:to-blue-700 px-6 sm:px-8 py-3 sm:py-4 h-auto text-base sm:text-lg"
               >
                 {isLoading ? (
                   <div className="flex items-center gap-2">
@@ -193,7 +193,6 @@ export default function DomainCheckerPage() {
           </div>
         </div>
 
-        {/* Results Section */}
         {results && (
           <div className="bg-background/50 backdrop-blur-sm border border-border/50 rounded-3xl p-6 sm:p-8">
             <div className="text-center mb-6 sm:mb-8">
@@ -248,15 +247,16 @@ export default function DomainCheckerPage() {
                 <div className="flex sm:block justify-center">
                   {results.available ? (
                     <Link
-                      href={`https://www.namecheap.com/domains/registration/results/?domain=${results.domain}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      size="sm"
-                      className="w-full sm:w-auto bg-gradient-to-r
-                      from-green-600 to-emerald-600 hover:from-green-700
-                      hover:to-emerald-700 text-sm"
+                      href={`https://www.bluehost.com/products/domain/domain-search-results?path=domainFirstFlow&domainName=${results.domain}`}
                     >
-                      Register Domain
+                      <Button
+                        size="sm"
+                        className="cursor-pointer w-full sm:w-auto bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-sm"
+                      >
+                        Register Domain
+                      </Button>
                     </Link>
                   ) : (
                     <Button
