@@ -22,7 +22,7 @@ export default function QRGeneratorPage() {
   const [isGenerating, setIsGenerating] = useState(false);
   const [isCopied, setIsCopied] = useState(false);
   const [qrConfig, setQrConfig] = useState({
-    size: 300,
+    size: 200,
     margin: 2,
     colorDark: "#000000",
     colorLight: "#FFFFFF",
