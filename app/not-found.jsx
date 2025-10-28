@@ -50,7 +50,7 @@ export default function ErrorPage() {
       {/* Background Elements */}
       <div className="absolute inset-0 -z-10 overflow-hidden">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl" />
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl" />
+        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-cyan-500/5 rounded-full blur-3xl" />
 
         {/* Animated floating elements */}
@@ -61,7 +61,7 @@ export default function ErrorPage() {
           className="absolute top-1/3 right-1/3 animate-float"
           style={{ animationDelay: "1s" }}
         >
-          <div className="w-6 h-6 bg-purple-500/20 rounded-full" />
+          <div className="w-6 h-6 bg-blue-500/20 rounded-full" />
         </div>
         <div
           className="absolute bottom-1/4 right-1/4 animate-float"
@@ -74,11 +74,11 @@ export default function ErrorPage() {
       <div className="max-w-2xl w-full text-center">
         {/* Animated 404 Number */}
         <div className="relative mb-8">
-          <div className="text-8xl sm:text-9xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent opacity-10">
+          <div className="text-8xl sm:text-9xl font-bold bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent opacity-10">
             404
           </div>
           <div className="absolute inset-0 flex items-center justify-center">
-            <div className="text-6xl sm:text-7xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+            <div className="text-6xl sm:text-7xl font-bold bg-gradient-to-r from-blue-600 to-blue-600 bg-clip-text text-transparent">
               404
             </div>
           </div>
@@ -123,7 +123,7 @@ export default function ErrorPage() {
             {/* Progress Bar */}
             <div className="w-full bg-muted/50 rounded-full h-3 overflow-hidden">
               <div
-                className="h-full bg-gradient-to-r from-blue-600 to-purple-600 rounded-full transition-all duration-1000 ease-out"
+                className="h-full bg-gradient-to-r from-blue-600 to-blue-600 rounded-full transition-all duration-1000 ease-out"
                 style={{ width: `${progress}%` }}
               />
             </div>
@@ -167,7 +167,7 @@ export default function ErrorPage() {
             <Button
               asChild
               size="lg"
-              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700"
+              className="bg-gradient-to-r from-blue-600 to-blue-600 hover:from-blue-700 hover:to-blue-700"
             >
               <Link href="/" className="flex items-center gap-2">
                 <Home className="h-5 w-5" />

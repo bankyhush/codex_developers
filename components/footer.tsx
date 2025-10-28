@@ -15,8 +15,8 @@ const links = [
         href: "/portfolio",
       },
       {
-        title: "Help",
-        href: "/contact",
+        title: "Codex Services",
+        href: "/services",
       },
       {
         title: "About",
@@ -38,8 +38,8 @@ const links = [
       },
 
       {
-        title: "Codex Services",
-        href: "/services",
+        title: "Logo Generator",
+        href: "/logo-gen",
       },
       {
         title: "Names Generator",
@@ -57,10 +57,6 @@ const links = [
       {
         title: "Careers",
         href: "/careers",
-      },
-      {
-        title: "Blog",
-        href: "/blog",
       },
       {
         title: "Contact",

@@ -112,7 +112,7 @@ export default function LoginPage() {
           <div className="bg-background/50 backdrop-blur-sm border border-border/50 rounded-3xl p-8 shadow-2xl shadow-blue-500/10">
             {/* Header */}
             <div className="text-center mb-8">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 mb-6">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full  mb-6">
                 <Link href="/">
                   <Image
                     src="/codex/logo3.png"
@@ -246,8 +246,9 @@ export default function LoginPage() {
               {/* Submit Button */}
               <Button
                 type="submit"
-                disabled={isLoading}
-                className="w-full h-12 bg-gradient-to-r from-blue-600 to-blue-600 hover:from-blue-700 hover:to-blue-700 shadow-lg shadow-blue-500/25 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300"
+                disabled
+                className=" w-full h-12 bg-gradient-to-r from-gray-600 to-blue-600 hover:from-blue-700 hover:to-blue-700 shadow-lg shadow-blue-500/25 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300"
+                readonly
               >
                 {isLoading ? (
                   <div className="flex items-center gap-2">
@@ -256,7 +257,7 @@ export default function LoginPage() {
                   </div>
                 ) : (
                   <div className="flex items-center gap-2">
-                    <span>Sign In</span>
+                    <span>Coming soon</span>
                     <ArrowRight className="h-5 w-5" />
                   </div>
                 )}

@@ -29,20 +29,20 @@ const menuItems = [
 ];
 
 const products = [
-  { name: "AI Web Builder", href: "#", icon: Layout },
-  { name: "AI Blog Builder", href: "#", icon: BookOpen },
-  { name: "Online Shop", href: "#", icon: ShoppingCart },
+  { name: "AI Web Builder", href: "/login", icon: Layout },
+  { name: "AI Blog Builder", href: "/login", icon: BookOpen },
+  { name: "Online Shop", href: "/login", icon: ShoppingCart },
   { name: "Your QR Code", href: "/qr-code", icon: QrCode },
   { name: "Domain Checker", href: "/domain-checker", icon: Sparkles },
-  { name: "Logo Generator", href: "#", icon: Palette },
+  { name: "Logo Generator", href: "/logo-gen", icon: Palette },
   { name: "Names Generator", href: "/name-gen", icon: Building },
-  { name: "Scale & Earn", href: "#", icon: Zap },
-  { name: "AI ChatBot", href: "#", icon: Bot },
-  { name: "Company Email", href: "#", icon: Mail },
+  { name: "Scale & Earn", href: "/career", icon: Zap },
+  { name: "AI ChatBot", href: "/login", icon: Bot },
+  { name: "Company Email", href: "/login", icon: Mail },
 ];
 
 const resources = [
-  { name: "Use Templates", href: "/portfolio", icon: null },
+  { name: "View Templates", href: "/portfolio", icon: null },
   { name: "For Enterprise", href: "/features", icon: null },
 ];
 
