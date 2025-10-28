@@ -14,6 +14,7 @@ import {
   ExternalLink,
   DollarSign,
 } from "lucide-react";
+import Link from "next/link";
 
 export default function DomainCheckerPage() {
   const [domain, setDomain] = useState("");
@@ -246,12 +247,17 @@ export default function DomainCheckerPage() {
 
                 <div className="flex sm:block justify-center">
                   {results.available ? (
-                    <Button
+                    <Link
+                      href={`https://www.namecheap.com/domains/registration/results/?domain=${results.domain}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       size="sm"
-                      className="w-full sm:w-auto bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-sm"
+                      className="w-full sm:w-auto bg-gradient-to-r
+                      from-green-600 to-emerald-600 hover:from-green-700
+                      hover:to-emerald-700 text-sm"
                     >
                       Register Domain
-                    </Button>
+                    </Link>
                   ) : (
                     <Button
                       size="sm"
