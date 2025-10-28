@@ -126,7 +126,7 @@ export default function DomainCheckerPage() {
         </div>
 
         {/* Search Section */}
-        <div className="bg-background/50 backdrop-blur-sm border border-border/50 rounded-3xl p-8 mb-12">
+        <div className="bg-background/50 backdrop-blur-sm border border-border/50 rounded-3xl p-6 sm:p-8 mb-12">
           <div className="max-w-2xl mx-auto">
             <div className="flex flex-col sm:flex-row gap-4 mb-6">
               <div className="flex-1">
@@ -137,14 +137,15 @@ export default function DomainCheckerPage() {
                     value={domain}
                     onChange={(e) => setDomain(e.target.value.toLowerCase())}
                     placeholder="Enter domain name (e.g., mywebsite.com)"
-                    className="w-full pl-10 pr-4 py-4 bg-background border border-border/50 rounded-xl focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all duration-300 text-lg"
+                    className="w-full pl-10 pr-4 py-3 sm:py-4 bg-background border border-border/50 rounded-xl focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all duration-300 text-base sm:text-lg"
                     onKeyPress={(e) => e.key === "Enter" && checkDomain()}
                   />
                 </div>
+                {/* Mobile-friendly error message */}
                 {error && (
-                  <div className="flex items-center gap-2 text-red-500 text-sm mt-2">
-                    <AlertCircle className="h-4 w-4" />
-                    {error}
+                  <div className="flex items-start gap-2 text-red-500 text-sm mt-2 p-3 bg-red-500/10 rounded-lg border border-red-500/20">
+                    <AlertCircle className="h-4 w-4 mt-0.5 flex-shrink-0" />
+                    <span className="break-words">{error}</span>
                   </div>
                 )}
               </div>
@@ -152,17 +153,17 @@ export default function DomainCheckerPage() {
               <Button
                 onClick={() => checkDomain()}
                 disabled={isLoading}
-                className="sm:w-auto bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 px-8 py-4 h-auto"
+                className="sm:w-auto bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 px-6 sm:px-8 py-3 sm:py-4 h-auto text-base sm:text-lg"
               >
                 {isLoading ? (
                   <div className="flex items-center gap-2">
-                    <RefreshCw className="h-5 w-5 animate-spin" />
-                    <span>Checking...</span>
+                    <RefreshCw className="h-4 w-4 sm:h-5 sm:w-5 animate-spin" />
+                    <span className="text-sm sm:text-base">Checking...</span>
                   </div>
                 ) : (
                   <div className="flex items-center gap-2">
-                    <Search className="h-5 w-5" />
-                    <span>Check Domain</span>
+                    <Search className="h-4 w-4 sm:h-5 sm:w-5" />
+                    <span className="text-sm sm:text-base">Check Domain</span>
                   </div>
                 )}
               </Button>
@@ -181,7 +182,7 @@ export default function DomainCheckerPage() {
                     size="sm"
                     onClick={() => quickCheck(ext)}
                     disabled={isLoading}
-                    className="text-xs"
+                    className="text-xs px-2 py-1 sm:px-3 sm:py-2"
                   >
                     {ext}
                   </Button>
@@ -193,76 +194,84 @@ export default function DomainCheckerPage() {
 
         {/* Results Section */}
         {results && (
-          <div className="bg-background/50 backdrop-blur-sm border border-border/50 rounded-3xl p-8">
-            <div className="text-center mb-8">
-              <h2 className="text-2xl font-bold mb-2">Domain Results</h2>
-              <p className="text-muted-foreground">
-                Results for {results.domain}
-                <span className="text-xs bg-muted/50 px-2 py-1 rounded ml-2">
+          <div className="bg-background/50 backdrop-blur-sm border border-border/50 rounded-3xl p-6 sm:p-8">
+            <div className="text-center mb-6 sm:mb-8">
+              <h2 className="text-xl sm:text-2xl font-bold mb-2">
+                Domain Results
+              </h2>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-2">
+                <p className="text-muted-foreground text-sm sm:text-base">
+                  Results for {results.domain}
+                </p>
+                <span className="text-xs bg-muted/50 px-2 py-1 rounded">
                   Source: {results.source}
                 </span>
-              </p>
+              </div>
             </div>
 
-            {/* Availability Status */}
+            {/* Mobile-friendly Availability Status */}
             <div
-              className={`p-6 rounded-2xl mb-8 ${
+              className={`p-4 sm:p-6 rounded-2xl mb-6 sm:mb-8 ${
                 results.available
                   ? "bg-green-500/10 border border-green-500/20"
                   : "bg-red-500/10 border border-red-500/20"
               }`}
             >
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-3">
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                <div className="flex items-start sm:items-center gap-3">
                   {results.available ? (
-                    <>
-                      <CheckCircle className="h-8 w-8 text-green-500" />
-                      <div>
-                        <h3 className="text-xl font-bold">Domain Available!</h3>
-                        <p className="text-muted-foreground">
-                          This domain is available for registration
-                        </p>
-                        {results.price && (
-                          <div className="flex items-center gap-2 mt-2 text-green-600">
-                            <DollarSign className="h-4 w-4" />
-                            <span className="font-semibold">
-                              ${results.price} {results.currency}/year
-                            </span>
-                          </div>
-                        )}
-                      </div>
-                    </>
+                    <CheckCircle className="h-6 w-6 sm:h-8 sm:w-8 text-green-500 mt-1 sm:mt-0 flex-shrink-0" />
                   ) : (
-                    <>
-                      <XCircle className="h-8 w-8 text-red-500" />
-                      <div>
-                        <h3 className="text-xl font-bold">Domain Taken</h3>
-                        <p className="text-muted-foreground">
-                          This domain is already registered
-                        </p>
-                      </div>
-                    </>
+                    <XCircle className="h-6 w-6 sm:h-8 sm:w-8 text-red-500 mt-1 sm:mt-0 flex-shrink-0" />
                   )}
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-lg sm:text-xl font-bold break-words">
+                      {results.available ? "Domain Available!" : "Domain Taken"}
+                    </h3>
+                    <p className="text-muted-foreground text-sm sm:text-base mt-1">
+                      {results.available
+                        ? "This domain is available for registration"
+                        : "This domain is already registered"}
+                    </p>
+                    {results.available && results.price && (
+                      <div className="flex items-center gap-2 mt-2 text-green-600">
+                        <DollarSign className="h-4 w-4" />
+                        <span className="font-semibold text-sm sm:text-base">
+                          ${results.price} {results.currency}/year
+                        </span>
+                      </div>
+                    )}
+                  </div>
                 </div>
 
-                {results.available ? (
-                  <Button className="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700">
-                    Register Domain
-                  </Button>
-                ) : (
-                  <Button variant="outline">
-                    <ExternalLink className="h-4 w-4 mr-2" />
-                    Search Alternatives
-                  </Button>
-                )}
+                <div className="flex sm:block justify-center">
+                  {results.available ? (
+                    <Button
+                      size="sm"
+                      className="w-full sm:w-auto bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-sm"
+                    >
+                      Register Domain
+                    </Button>
+                  ) : (
+                    <Button
+                      size="sm"
+                      variant="outline"
+                      className="w-full sm:w-auto text-sm"
+                    >
+                      <ExternalLink className="h-4 w-4 mr-2" />
+                      Search Alternatives
+                    </Button>
+                  )}
+                </div>
               </div>
             </div>
 
-            {/* Action Buttons */}
-            <div className="flex flex-col sm:flex-row gap-3 mt-8 pt-6 border-t border-border/50">
+            {/* Mobile-friendly Action Buttons */}
+            <div className="flex flex-col sm:flex-row gap-3 mt-6 sm:mt-8 pt-6 border-t border-border/50">
               <Button
                 variant="outline"
-                className="flex-1"
+                size="sm"
+                className="flex-1 py-2.5 text-sm"
                 onClick={() => checkDomain()}
               >
                 <RefreshCw className="h-4 w-4 mr-2" />
@@ -271,7 +280,8 @@ export default function DomainCheckerPage() {
 
               <Button
                 variant="outline"
-                className="flex-1"
+                size="sm"
+                className="flex-1 py-2.5 text-sm"
                 onClick={() => {
                   setDomain("");
                   setResults(null);
@@ -285,7 +295,7 @@ export default function DomainCheckerPage() {
         )}
 
         {/* Features Section */}
-        <div className="mt-20 grid md:grid-cols-3 gap-8">
+        <div className="mt-16 sm:mt-20 grid md:grid-cols-3 gap-6 sm:gap-8">
           {[
             {
               icon: Search,
@@ -308,15 +318,15 @@ export default function DomainCheckerPage() {
             return (
               <div
                 key={index}
-                className="text-center bg-background/50 backdrop-blur-sm border border-border/50 rounded-2xl p-6"
+                className="text-center bg-background/50 backdrop-blur-sm border border-border/50 rounded-2xl p-4 sm:p-6"
               >
-                <div className="p-3 rounded-xl bg-blue-500/10 w-fit mx-auto mb-4">
-                  <IconComponent className="h-6 w-6 text-blue-500" />
+                <div className="p-2 sm:p-3 rounded-xl bg-blue-500/10 w-fit mx-auto mb-3 sm:mb-4">
+                  <IconComponent className="h-5 w-5 sm:h-6 sm:w-6 text-blue-500" />
                 </div>
-                <h3 className="font-semibold text-foreground mb-2">
+                <h3 className="font-semibold text-foreground text-sm sm:text-base mb-2">
                   {feature.title}
                 </h3>
-                <p className="text-muted-foreground text-sm">
+                <p className="text-muted-foreground text-xs sm:text-sm leading-relaxed">
                   {feature.description}
                 </p>
               </div>
