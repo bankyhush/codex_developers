@@ -121,8 +121,8 @@ export default function DomainCheckerPage() {
             </span>
           </h1>
           <p className="mx-auto max-w-2xl text-xl text-muted-foreground">
-            Check domain availability with real-time data from DomainsDuck API.
-            Get accurate, instant results.
+            Check domain availability with real-time results. Get accurate,
+            instant results.
           </p>
         </div>
 
