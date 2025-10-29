@@ -192,7 +192,7 @@ export default function ErrorPage() {
               {[
                 { name: "Services", href: "/services" },
                 { name: "Portfolio", href: "/portfolio" },
-                { name: "Courses", href: "/courses" },
+                { name: "Courses", href: "/tech" },
                 { name: "About", href: "/about" },
               ].map((link, index) => (
                 <Link
