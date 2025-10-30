@@ -25,8 +25,10 @@ export default function WhatsAppChat() {
         bottom-5
         right-5
         z-50
-        bg-green-500
-        hover:bg-green-600
+        bg-green-600
+        dark:bg-green-900
+        hover:bg-green-500
+        dark:hover:bg-green-800
         text-white
         p-4
         rounded-full
