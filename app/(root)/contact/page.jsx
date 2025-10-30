@@ -105,7 +105,7 @@ Timeline: ${formData.timeline || "Not specified"}
       icon: Phone,
       title: "Call Us",
       description: "Mon to Fri from 8am to 6pm",
-      value: "+234 9071853515",
+      value: "+234 9071853515 ||  +234 8066273118",
       action: "tel:+2349071853515",
       color: "from-green-500 to-emerald-500",
     },
