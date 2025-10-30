@@ -296,7 +296,11 @@ Timeline: ${formData.timeline || "Not specified"}
                   { icon: Github, href: "#", color: "hover:bg-gray-500/20" },
                   { icon: Twitter, href: "#", color: "hover:bg-blue-500/20" },
                   { icon: Linkedin, href: "#", color: "hover:bg-blue-600/20" },
-                  { icon: Instagram, href: "#", color: "hover:bg-pink-500/20" },
+                  {
+                    icon: Instagram,
+                    href: "https://www.instagram.com/codex_developers?igsh=MW9obmMzeGl0bm5nNw==",
+                    color: "hover:bg-pink-500/20",
+                  },
                 ].map((social, index) => {
                   const IconComponent = social.icon;
                   return (

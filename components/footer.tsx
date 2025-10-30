@@ -219,7 +219,7 @@ export default function FooterSection() {
               </svg>
             </Link>
             <Link
-              href="#"
+              href="https://www.instagram.com/codex_developers?igsh=MW9obmMzeGl0bm5nNw=="
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"
