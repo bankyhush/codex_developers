@@ -17,6 +17,7 @@ import {
   Twitter,
   Linkedin,
   Instagram,
+  AlertCircle,
 } from "lucide-react";
 import Link from "next/link";
 
@@ -32,23 +33,63 @@ export default function ContactPage() {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [error, setError] = useState("");
 
   const handleChange = (e) => {
     setFormData((prev) => ({
       ...prev,
       [e.target.name]: e.target.value,
     }));
+    // Clear error when user starts typing again
+    if (error) setError("");
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setError("");
 
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 2000));
+    try {
+      // Prepare data for the API - note the API expects "subject" but we don't have it in the form
+      // We'll use a combination of fields for the subject
+      const apiData = {
+        name: formData.name,
+        email: formData.email,
+        subject: `New Project Inquiry from ${formData.name} - ${
+          formData.company || "No Company"
+        }`,
+        message: `
+Project Details:
+${formData.message}
 
-    setIsSubmitting(false);
-    setIsSubmitted(true);
+Company: ${formData.company || "Not specified"}
+Budget: ${formData.budget || "Not specified"}
+Timeline: ${formData.timeline || "Not specified"}
+        `.trim(),
+      };
+
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(apiData),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.error || "Failed to send message");
+      }
+
+      // Success - show success state
+      setIsSubmitted(true);
+    } catch (error) {
+      console.error("Contact form error:", error);
+      setError(error.message || "Something went wrong. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const contactMethods = [
@@ -56,8 +97,8 @@ export default function ContactPage() {
       icon: Mail,
       title: "Email Us",
       description: "Send us an email anytime",
-      value: "info@codexdevelopers.com",
-      action: "mailto:info@codexdevelopers.com",
+      value: "info@codexdevs.site",
+      action: "mailto:info@codexdevs.site",
       color: "from-blue-500 to-cyan-500",
     },
     {
@@ -182,7 +223,7 @@ export default function ContactPage() {
             </span>
           </h1>
           <p className="mx-auto max-w-2xl text-xl text-muted-foreground">
-            Have a question or a project in mind? Reach out to us, we’d love to
+            Have a question or a project in mind? Reach out to us, we'd love to
             hear from you and explore how we can work together to bring your
             vision to life.
           </p>
@@ -302,6 +343,16 @@ export default function ContactPage() {
                 Send Message
               </h2>
             </div>
+
+            {/* Error Message */}
+            {error && (
+              <div className="mb-6 p-4 bg-red-500/10 border border-red-500/20 rounded-xl flex items-center gap-3">
+                <AlertCircle className="h-5 w-5 text-red-500" />
+                <p className="text-sm text-red-600 dark:text-red-400">
+                  {error}
+                </p>
+              </div>
+            )}
 
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid sm:grid-cols-2 gap-6">

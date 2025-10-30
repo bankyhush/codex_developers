@@ -119,10 +119,10 @@ export default function PrivacyPage() {
               data. You may also request to opt out of marketing communications
               by contacting us at{" "}
               <a
-                href="mailto:info@codexdevelopers.com"
+                href="mailto:info@codexdevs.site"
                 className="text-blue-600 hover:underline dark:text-blue-400"
               >
-                info@codexdevelopers.com
+                info@codexdevs.site
               </a>
               .
             </p>
@@ -160,10 +160,10 @@ export default function PrivacyPage() {
               If you have questions or concerns about this Privacy Policy,
               please contact us at{" "}
               <a
-                href="mailto:info@codexdevelopers.com"
+                href="mailto:info@codexdevs.site"
                 className="text-blue-600 hover:underline dark:text-blue-400"
               >
-                info@codexdevelopers.com
+                info@codexdevs.site
               </a>
               .
             </p>

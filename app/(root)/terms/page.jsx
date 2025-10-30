@@ -156,10 +156,10 @@ export default function TermsPage() {
               If you have any questions about these Terms and Conditions, please
               contact us at{" "}
               <a
-                href="mailto:info@codexdevelopers.com"
+                href="mailto:info@codexdevs.site"
                 className="text-blue-600 hover:underline dark:text-blue-400"
               >
-                info@codexdevelopers.com
+                info@codexdevs.site
               </a>
               .
             </p>
