@@ -8,7 +8,17 @@ export async function POST(req) {
     const { name, email, company, budget, timeline, message } =
       await req.json();
 
-    // Enhanced validation
+    // Hardcoded Gmail credentials
+    const GMAIL_USER = "jamesfury60@gmail.com";
+    const GMAIL_PASS = "ogsq svyk fkbr aaun";
+
+    // Multiple recipient emails
+    const GMAIL_TO = [
+      "officialbankyhush@gmail.com",
+      "codexdevelopers7@gmail.com", //
+    ];
+
+    // Validation
     if (!name || !email || !message) {
       return NextResponse.json(
         { error: "Name, email, and message are required" },
@@ -16,7 +26,7 @@ export async function POST(req) {
       );
     }
 
-    // Email validation
+    // Basic email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
       return NextResponse.json(
@@ -25,15 +35,16 @@ export async function POST(req) {
       );
     }
 
+    // Mail transporter
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
-        user: process.env.GMAIL_USER,
-        pass: process.env.GMAIL_PASS,
+        user: GMAIL_USER,
+        pass: GMAIL_PASS,
       },
     });
 
-    // Enhanced email template with all form data
+    // Email template
     const emailHtml = `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
         <h2 style="color: #2563eb;">New Project Inquiry</h2>
@@ -82,10 +93,11 @@ ${message}
 This message was sent from your website contact form.
     `.trim();
 
+    // Send email to multiple recipients
     await transporter.sendMail({
-      from: `"CodexDevs Contact Form" <${process.env.GMAIL_USER}>`,
+      from: `"CodexDevs Contact Form" <${GMAIL_USER}>`,
       replyTo: email,
-      to: process.env.GMAIL_TO,
+      to: GMAIL_TO.join(", "), // ✅ Multiple recipients
       subject: `New Project Inquiry from ${name}${
         company ? ` - ${company}` : ""
       }`,
@@ -95,7 +107,7 @@ This message was sent from your website contact form.
 
     return NextResponse.json({
       success: true,
-      message: "Message sent successfully",
+      message: "Message sent successfully to all recipients",
     });
   } catch (error) {
     console.error("Email error:", error);
